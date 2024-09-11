@@ -1,23 +1,23 @@
-import { View, Text, StyleSheet } from "react-native";
+import React from "react";
+import { withExpoSnack } from "nativewind";
 
-export default function App() {
+import { Text, View } from "react-native";
+import { styled } from "nativewind";
+
+const StyledView = styled(View);
+const StyledText = styled(Text);
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hello, React Native!</Text>
-    </View>
+    <StyledView className="flex-1 items-center justify-center">
+      <StyledText className="text-slate-800 text-6xl">
+        Try editing me! 🎉
+      </StyledText>
+    </StyledView>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#f3f4f6",
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#3b82f6",
-  },
-});
+// This demo is using a external compiler that will only work in Expo Snacks.
+// You may see flashes of unstyled content, this will not occur under normal use!
+// Please see the documentation to setup your application
+export default withExpoSnack(App);
